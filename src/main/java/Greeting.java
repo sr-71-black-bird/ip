@@ -15,7 +15,15 @@ public class Greeting {
 
     //This method is to say goodbye
     public void sayBye() {
+        System.out.println("____________________________________________________________");
         System.out.println(" Bye. Hope to see you again soon!");
+        System.out.println("____________________________________________________________");
+    }
+
+    //This method is for echo
+    public void echo(String s) {
+        System.out.println("____________________________________________________________");
+        System.out.println(" " + s);
         System.out.println("____________________________________________________________");
     }
 }
