@@ -11,7 +11,6 @@ public class TaskList {
     public void add(Task task) {
         this.list[index] = task;
         this.index++;
-        System.out.println("added: " + task);
     }
 
     //this completes the task at given index
@@ -26,6 +25,11 @@ public class TaskList {
 
     public Task getTask(int index) {
         return this.list[index];
+    }
+
+    //this method returns the total number of tasks
+    public int getTotalTask() {
+        return this.index;
     }
 
     @Override
