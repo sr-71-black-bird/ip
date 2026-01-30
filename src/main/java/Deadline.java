@@ -1,8 +1,11 @@
 public class Deadline extends Task {
     private String deadline;
 
-    public Deadline(String name, String deadline) {
+    public Deadline(String name, String deadline) throws WrongInstructionException {
         super(name);
+        if (deadline.equals("")) {
+            throw new WrongInstructionException("Task deadline invalid");
+        }
         this.deadline = deadline;
     }
 

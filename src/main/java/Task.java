@@ -2,7 +2,10 @@ public class Task {
     private String name;
     private boolean isDone;
 
-    public Task(String name) {
+    public Task(String name) throws WrongInstructionException {
+        if (name.equals("")) {
+            throw new WrongInstructionException("Task name invalid");
+        }
         this.name = name;
         this.isDone = false;
     }
