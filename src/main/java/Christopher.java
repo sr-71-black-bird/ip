@@ -55,6 +55,9 @@ public class Christopher {
                     taskList.undoComplete(index);
                     Task tmpTask = taskList.getTask(index);
                     System.out.println(tmpTask);
+                } else if (firstWord.equals("delete")) {
+                    int index = Integer.parseInt(tmp[1]) - 1;
+                    taskList.delete(index);
                 } else {
                     System.out.println("Invalid instruction, please try again");
                 }
