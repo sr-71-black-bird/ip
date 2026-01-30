@@ -17,21 +17,24 @@ public class Christopher {
             } else if (firstWord.equals("list")) {
                 System.out.println(taskList);
             } else if (firstWord.equals("todo")) {
-                ToDo tmpToDo = new ToDo(input);
+                String toDoInput = input.substring(input.indexOf(" ") + 1).trim();
+                ToDo tmpToDo = new ToDo(toDoInput);
                 System.out.println("Got it. I've added this task:");
                 System.out.println(tmpToDo);
                 taskList.add(tmpToDo);
                 System.out.println("Now you have " + taskList.getTotalTask() + " tasks");
             } else if (firstWord.equals("deadline")) {
                 String[] deadlineInput = input.split(" /by ");
-                Deadline tmpDeadline = new Deadline(deadlineInput[0], deadlineInput[1]);
+                String deadlineName = deadlineInput[0].substring(deadlineInput[0].indexOf(" ") + 1).trim();
+                Deadline tmpDeadline = new Deadline(deadlineName, deadlineInput[1]);
                 System.out.println("Got it. I've added this task:");
                 System.out.println(tmpDeadline);
                 taskList.add(tmpDeadline);
                 System.out.println("Now you have " + taskList.getTotalTask() + " tasks");
             } else if (firstWord.equals("event")) {
-                String[] eventInput = input.split(" /from | /to ");
-                Event tmpEvent = new Event(eventInput[0], eventInput[1], eventInput[2]);
+                String[] eventInput = input.split("/event | /from | /to ");
+                String eventName = eventInput[0].substring(eventInput[0].indexOf(" ") + 1).trim();
+                Event tmpEvent = new Event(eventName, eventInput[1], eventInput[2]);
                 System.out.println("Got it. I've added this task:");
                 System.out.println(tmpEvent);
                 taskList.add(tmpEvent);
