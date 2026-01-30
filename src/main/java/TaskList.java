@@ -36,11 +36,7 @@ public class TaskList {
 
     //this method is for deleting a task
     public void delete(int index) {
-        System.out.println("Noted. I've removed this task:");
-        Task task = this.list.get(index);
-        System.out.println(task);
         this.list.remove(index);
-        System.out.println(String.format("Now you have %d tasks in the list.", this.list.size()));
     }
 
     @Override
