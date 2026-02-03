@@ -4,6 +4,11 @@
 public enum Command {
     TODO, DEADLINE, EVENT, LIST, BYE, MARK, UNMARK, DELETE, UNKNOWN;
 
+    /**
+     * This method takes a command given by the user and match it to one of the enum types
+     * @param input specified by user
+     * @return one of the enum listed above
+     */
     public static Command from(String input) {
         String commandWord = input.trim().split(" ")[0].toUpperCase();
 

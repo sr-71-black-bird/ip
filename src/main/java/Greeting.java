@@ -8,7 +8,10 @@ public class Greeting {
         this.name = name;
     }
 
-    //This method is to say Hi
+    /**
+     * Bot uses this once at the start
+     * Says Hi to the user
+     */
     public void sayHi() {
         System.out.println("____________________________________________________________");
         System.out.println(" Hello! I'm " + this.name);
@@ -16,14 +19,20 @@ public class Greeting {
         System.out.println("____________________________________________________________");
     }
 
-    //This method is to say goodbye
+    /**
+     * Bot users this once at the end when user input 'bye'
+     * Uses to say goodbye to the user
+     */
     public void sayBye() {
         System.out.println("____________________________________________________________");
         System.out.println(" Bye. Hope to see you again soon!");
         System.out.println("____________________________________________________________");
     }
 
-    //This method is for echo
+    /**
+     * Regurgitates the command types by the user
+     * @param s this is a command by the user
+     */
     public void echo(String s) {
         System.out.println("____________________________________________________________");
         System.out.println(" " + s);

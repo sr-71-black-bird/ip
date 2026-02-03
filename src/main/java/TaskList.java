@@ -18,26 +18,43 @@ public class TaskList {
         this.list.add(task);
     }
 
-    //this completes the task at given index
+    /**
+     * This method marks the task at the specified position to be "complete"
+     * @param index the position of the desired task - 1 (e.g task3 has index 2)
+     */
     public void complete(int index) {
         this.list.get(index).complete();
     }
 
-    //this uncompletes the task at given index
+    /**
+     * This method marks the task at the specified position to be "incomplete"
+     * @param index the position of the desired task - 1 (e.g task3 has index 2)
+     */
     public void undoComplete(int index) {
         this.list.get(index).undoComplete();
     }
 
+    /**
+     * This method returns the task at the specified position
+     * @param index index is one less than position (e.g task3 has index 2)
+     * @return the object of the desired task
+     */
     public Task getTask(int index) {
         return this.list.get(index);
     }
 
-    //this method returns the total number of tasks
+    /**
+     * This method returns the number of tasks in the list
+     * @return the number of tasks in the list
+     */
     public int getTotalTask() {
         return this.list.size();
     }
 
-    //this method is for deleting a task
+    /**
+     * This method removes the specified task from the list
+     * @param index the position of the task to be removed - 1 (e.g task3 has index 2)
+     */
     public void delete(int index) {
         this.list.remove(index);
     }

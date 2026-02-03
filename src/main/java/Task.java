@@ -15,12 +15,16 @@ public class Task {
         this.isDone = false;
     }
 
-    //This is to complete the task
+    /**
+     * Marks the specific task instance to be complete
+     */
     public void complete() {
         this.isDone = true;
     }
 
-    //This method reverses the done status
+    /**
+     * Marks the specific task instance to be incomplete
+     */
     public void undoComplete() {
         this.isDone = false;
     }
