@@ -1,18 +1,21 @@
 import java.util.ArrayList;
 
+/**
+ * This is a taskList, it will maintain an array containing tasks on the list
+ */
 public class TaskList {
     private ArrayList<Task> list;
-    private int index;
 
     public TaskList() {
         this.list = new ArrayList<>();
-        this.index = 0;
     }
 
-    //this adds something into the list
+    /**
+     * This method takes in a task and add it to our taskList
+     * @param task The task to be added into the list
+     */
     public void add(Task task) {
         this.list.add(task);
-        this.index++;
     }
 
     //this completes the task at given index

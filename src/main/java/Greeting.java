@@ -1,3 +1,6 @@
+/**
+ * This class is for generating the standard greetings and goodbyes the bot may say to the user
+ */
 public class Greeting {
     private String name;
 

@@ -1,3 +1,7 @@
+/**
+ * This is a form of task, specifically a task with a deadline attached
+ * Deadline is specified by the "/by" indication during user input
+ */
 public class Deadline extends Task {
     private String deadline;
 

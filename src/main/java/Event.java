@@ -1,3 +1,9 @@
+/**
+ * This is an "event", a type of task
+ * It contains the start time and end time and a body
+ * Start time indicated by /from
+ * End time indicated by /by
+ */
 public class Event extends Task {
     String start;
     String end;
