@@ -1,16 +1,15 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
  * This is the chatbot, Christopher, he will greet the user, and take commands until a bye was said
  */
 public class Christopher {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, WrongInstructionException {
         Greeting greeting = new Greeting("Christopher");
-        TaskList taskList = new TaskList();
+        Storage storage = new Storage();
+        TaskList taskList = new TaskList(storage.load());
         Scanner scanner = new Scanner(System.in);
-
-
-
         greeting.sayHi();
         outer:
         while (true) {
@@ -36,10 +35,11 @@ public class Christopher {
                     System.out.println("Now you have " + taskList.getTotalTask() + " tasks");
                     break;
                 case BYE:
+                    storage.save(taskList);
                     greeting.sayBye();
                     break outer;
                 case LIST:
-                    greeting.sayBye();
+                    System.out.println(taskList.toString());
                     break;
                 case EVENT:
                     String[] eventInput = input.split("/event | /from | /to ");
@@ -73,7 +73,7 @@ public class Christopher {
                     System.out.println(String.format("Now you have %d tasks in the list.", taskList.getTotalTask()));
                     break;
                 default:
-                    System.out.print("Unknown command, please try again");
+                    System.out.print("Unknown command, please try again\n");
                     break;
                 }
             } catch (WrongInstructionException e) {
