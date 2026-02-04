@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 
 /**
@@ -80,6 +81,9 @@ public class Christopher {
                 System.out.println(e);
             } catch (ArrayIndexOutOfBoundsException e) { //this is for when_todo or deadline has no-body
                 System.out.println("You instruction is incomplete, please try again");
+            } catch (DateTimeParseException e) {
+                System.out.println(e.getMessage());
+                System.out.println("Ensure that you input your date, time in the format yyyy-MM-dd HH:mm");
             }
         }
 
