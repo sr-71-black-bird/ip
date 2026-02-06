@@ -1,5 +1,7 @@
+package christopher.ui;
+
 /**
- * This is an enum for all the possible commands chatbot Christopher could take
+ * This is an enum for all the possible commands chatbot christopher.ui.Christopher could take
  */
 public enum Command {
     TODO, DEADLINE, EVENT, LIST, BYE, MARK, UNMARK, DELETE, UNKNOWN;

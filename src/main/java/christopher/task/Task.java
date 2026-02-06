@@ -1,3 +1,5 @@
+package christopher.task;
+
 /**
  * This is task class; it will have children of specific task types
  * It has a name, and an indication of whether it is done
@@ -9,7 +11,7 @@ public class Task {
 
     public Task(String name) throws WrongInstructionException {
         if (name.equals("")) {
-            throw new WrongInstructionException("Task name invalid");
+            throw new WrongInstructionException("christopher.task.Task name invalid");
         }
         this.name = name;
         this.isDone = false;

@@ -1,10 +1,12 @@
+package christopher.task;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
 /**
  * This is a form of task, specifically a task with a deadline attached
- * Deadline is specified by the "/by" indication during user input
+ * christopher.task.Deadline is specified by the "/by" indication during user input
  */
 public class Deadline extends Task {
     private LocalDateTime deadline;
@@ -12,7 +14,7 @@ public class Deadline extends Task {
     public Deadline(String name, String deadline) throws WrongInstructionException, DateTimeParseException {
         super(name);
         if (deadline.equals("")) {
-            throw new WrongInstructionException("Task deadline invalid");
+            throw new WrongInstructionException("christopher.task.Task deadline invalid");
         }
         DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
         this.deadline = LocalDateTime.parse(deadline, inputFormatter);
