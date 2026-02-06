@@ -1,3 +1,5 @@
+package christopher.ui;
+
 /**
  * This class is for generating the standard greetings and goodbyes the bot may say to the user
  */
