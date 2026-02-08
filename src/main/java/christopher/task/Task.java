@@ -17,6 +17,10 @@ public class Task {
         this.isDone = false;
     }
 
+    public String getName() {
+        return this.name;
+    }
+
     /**
      * Marks the specific task instance to be complete
      */

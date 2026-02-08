@@ -61,6 +61,36 @@ public class TaskList {
         this.list.remove(index);
     }
 
+    /**
+     * Find the desired tasks based on keywords in an array form
+     * @param keywords the specified keywords to look out for
+     * @return TaskList containing the list of desired tasks
+     */
+    public TaskList find(String[] keywords) {
+        TaskList result = new TaskList(new ArrayList<>());
+        for (int i = 0; i < this.list.size(); i++) {
+            Task tmp = this.getTask(i);
+            String name = tmp.toString().toLowerCase();
+
+            boolean matches = false;
+
+            for (String keyword: keywords) {
+                if (keyword.isBlank()) {
+                    continue;
+                }
+                if (name.contains(keyword.toLowerCase())) {
+                    matches = true;
+                    break;
+                }
+            }
+
+            if (matches) {
+                result.add(tmp);
+            }
+        }
+        return result;
+    }
+
     @Override
     public String toString() {
         String output = "";
