@@ -68,7 +68,7 @@ public class TaskList {
             output = output + (i + 1) + ". " + this.list.get(i) + "\n";
         }
         if (!this.list.isEmpty()) {
-            output += this.list.size() + ". " + this.list.getLast();
+            output += this.list.size() + ". " + this.list.get(this.list.size() - 1);
         }
         return output;
     }

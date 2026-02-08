@@ -31,6 +31,14 @@ public class Task {
         this.isDone = false;
     }
 
+    /**
+     * Check if it is done
+     * @return the isDone status of said task
+     */
+    public boolean isDone() {
+        return this.isDone;
+    }
+
     @Override
     public String toString() {
         if (this.isDone == false) {
