@@ -1,16 +1,16 @@
-# christopher.ui.Christopher User Guide
+# Christopher User Guide
 
 // Update the title above to match the actual product name
 
 // Product screenshot goes here
 
-// Product intro goes here
+He is a very boring npc bot that reflects my skill level
 
 ## Adding deadlines
 
-// Describe the action and its outcome.
+You can add a deadline to his taskList with the format "deadline (task) /by (date of deadline)"
 
-// Give examples of usage
+// Give examples of usa
 
 Example: `keyword (optional arguments)`
 
