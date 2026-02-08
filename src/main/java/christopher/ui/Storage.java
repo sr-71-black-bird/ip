@@ -1,4 +1,8 @@
 package christopher.ui;
+/**
+ * This is a storage class, it is responsible for loading from a data tasks.txt file
+ * It is also responsible for storing whatever tasks remaining into the same file
+ */
 
 import christopher.task.Deadline;
 import christopher.task.Event;
