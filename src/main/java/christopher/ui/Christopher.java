@@ -81,6 +81,10 @@ public class Christopher {
                     System.out.println(deleteTask);
                     System.out.println(String.format("Now you have %d tasks in the list.", taskList.getTotalTask()));
                     break;
+                case FIND:
+                    System.out.println("Here are the matching tasks in your list");
+                    System.out.println(taskList.find(tmp));
+                    break;
                 default:
                     System.out.print("Unknown command, please try again\n");
                     break;
