@@ -11,6 +11,13 @@ import java.time.format.DateTimeParseException;
 public class Deadline extends Task {
     private LocalDateTime deadline;
 
+    /**
+     * This creates a deadline object
+     * @param name the name or the task body
+     * @param deadline date and time of the deadline
+     * @throws WrongInstructionException when the user doesn't input enough info
+     * @throws DateTimeParseException when the wrong format is given for date and time
+     */
     public Deadline(String name, String deadline) throws WrongInstructionException, DateTimeParseException {
         super(name);
         if (deadline.equals("")) {

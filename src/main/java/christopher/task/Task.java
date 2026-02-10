@@ -9,6 +9,11 @@ public class Task {
     private String name;
     private boolean isDone;
 
+    /**
+     * creates a Task object
+     * @param name task to do
+     * @throws WrongInstructionException wrongly formatted or incomplete info
+     */
     public Task(String name) throws WrongInstructionException {
         if (name.equals("")) {
             throw new WrongInstructionException("christopher.task.Task name invalid");
