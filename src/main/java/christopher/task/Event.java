@@ -43,8 +43,6 @@ public class Event extends Task {
         return this.end;
     }
 
-    public LocalDateTime
-
     @Override
     public String toString() {
         DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("MMM dd yyyy, h:mm a");

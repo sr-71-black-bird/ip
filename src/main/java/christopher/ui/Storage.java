@@ -1,15 +1,5 @@
 package christopher.ui;
-/**
- * This is a storage class, it is responsible for loading from a data tasks.txt file
- * It is also responsible for storing whatever tasks remaining into the same file
- */
 
-import christopher.task.Deadline;
-import christopher.task.Event;
-import christopher.task.Task;
-import christopher.task.TaskList;
-import christopher.task.ToDo;
-import christopher.task.WrongInstructionException;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -17,6 +7,17 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
+import christopher.task.Deadline;
+import christopher.task.Event;
+import christopher.task.Task;
+import christopher.task.TaskList;
+import christopher.task.ToDo;
+import christopher.task.WrongInstructionException;
+
+/**
+ * This is a storage class, it is responsible for loading from a data tasks.txt file
+ * It is also responsible for storing whatever tasks remaining into the same file
+ */
 public class Storage {
     private final Path path = Paths.get("./data/tasks.txt");
 
@@ -69,6 +70,7 @@ public class Storage {
             String start = parts[2];
             String end = parts[3];
             task = new Event(taskName, start, end);
+            break;
         default:
             throw new WrongInstructionException("Unrecognizable format in save file tasks.txt, please review");
         }
