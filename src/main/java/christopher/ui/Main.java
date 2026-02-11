@@ -2,6 +2,7 @@ package christopher.ui;
 
 import java.io.IOException;
 
+import christopher.task.WrongInstructionException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -13,7 +14,11 @@ import javafx.stage.Stage;
  */
 public class Main extends Application {
 
-    private Christopher christopher = new Christopher();
+    private final Christopher christopher;
+
+    public Main() throws IOException, WrongInstructionException {
+        this.christopher = new Christopher();
+    }
 
     @Override
     public void start(Stage stage) {

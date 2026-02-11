@@ -5,6 +5,7 @@ import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 import java.util.ArrayList;
 
+import christopher.storage.Storage;
 import christopher.task.Deadline;
 import christopher.task.Event;
 import christopher.task.Task;
@@ -22,7 +23,13 @@ public class Christopher {
     private Storage storage = new Storage();
     private TaskList taskList = new TaskList(storage.load());
      */
-    private final TaskList taskList = new TaskList(new ArrayList<>());
+    private final TaskList taskList;
+    private final Storage storage;
+
+    public Christopher() throws IOException, WrongInstructionException {
+        this.storage = new Storage();
+        this.taskList = new TaskList(this.storage.load());
+    }
 
     public static void main(String[] args) throws IOException, WrongInstructionException {
         /*
