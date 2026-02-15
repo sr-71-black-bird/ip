@@ -1,8 +1,6 @@
 package christopher.parser;
 
-import christopher.command.DeadlineCommand;
-import christopher.command.EventCommand;
-import christopher.command.ToDoCommand;
+import christopher.command.*;
 import christopher.task.*;
 
 /**
@@ -51,6 +49,28 @@ public class Parser {
         String[] eventInput = input.split("/event | /from | /to ");
         String eventName = eventInput[0].substring(eventInput[0].indexOf(" ") + 1).trim();
         return new EventCommand(new Event(eventName, eventInput[1], eventInput[2]), this.taskList);
+    }
+
+    /**
+     * Parses a mark command input and returns the handler for such a command
+     *
+     * @param input user's input
+     * @return MarkCommand object
+     */
+    public MarkCommand parseMark(String input) {
+        int index = Integer.parseInt(input.split(" ")[1]) - 1;
+        return new MarkCommand(index, this.taskList);
+    }
+
+    /**
+     * Parses an unmark command input and returns the handler for the unmark command
+     *
+     * @param input user's input
+     * @return UnmarkCommand object
+     */
+    public UnmarkCommand parseUnmark(String input) {
+        int unmarkIndex = Integer.parseInt(input.split(" ")[1]) - 1;
+        return new UnmarkCommand(unmarkIndex, this.taskList);
     }
 
 
