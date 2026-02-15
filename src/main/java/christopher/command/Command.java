@@ -3,7 +3,7 @@ package christopher.command;
 import christopher.task.TaskList;
 
 /**
- * The is the abstract class Command and it has the
+ * Handles commands after interpretting user inputs
  */
 public abstract class Command {
     public abstract void execute();

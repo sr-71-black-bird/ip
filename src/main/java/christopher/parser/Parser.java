@@ -1,6 +1,7 @@
 package christopher.parser;
 
 import christopher.command.*;
+import christopher.storage.Storage;
 import christopher.task.*;
 
 /**
@@ -8,9 +9,11 @@ import christopher.task.*;
  */
 public class Parser {
     private TaskList taskList;
+    private Storage storage;
 
-    public Parser(TaskList taskList) {
+    public Parser(TaskList taskList, Storage storage) {
         this.taskList = taskList;
+        this.storage = storage;
     }
 
     /**
@@ -73,5 +76,23 @@ public class Parser {
         return new UnmarkCommand(unmarkIndex, this.taskList);
     }
 
+    /**
+     * Parses a list command by the user and returns the handler for this command
+     *
+     * @param input confirmed to be a list instruction
+     * @return ListCommand object
+     */
+    public ListCommand parseList(String input) {
+        return new ListCommand(this.taskList);
+    }
 
+    /**
+     * Parses a bye command and returns the handler for this command
+     *
+     * @param input bye command by the user
+     * @return ByeCommand(the taskList from christopher, the storage from christopher)
+     */
+    public ByeCommand parseBye(String input) {
+        return new ByeCommand(this.taskList, this.storage);
+    }
 }
