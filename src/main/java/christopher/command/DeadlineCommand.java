@@ -1,20 +1,18 @@
 package christopher.command;
 
-import christopher.parser.Parser;
 import christopher.task.Task;
 import christopher.task.TaskList;
-import christopher.task.WrongInstructionException;
 
+/**
+ * This class handles the things to be done when the user decides to add a deadline task to the list
+ */
 public class DeadlineCommand extends Command {
-    private String input;
     private Task task;
     private TaskList taskList;
-    private Parser parser = new Parser();
 
-    public DeadlineCommand(String input, TaskList taskList) throws WrongInstructionException {
-        this.input = input;
+    public DeadlineCommand(Task task, TaskList taskList) {
+        this.task = task;
         this.taskList = taskList;
-        this.task = this.parser.parseDeadline(input);
     }
 
     /**

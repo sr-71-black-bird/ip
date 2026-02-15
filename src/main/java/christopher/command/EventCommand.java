@@ -1,24 +1,22 @@
 package christopher.command;
 
-import christopher.parser.Parser;
 import christopher.task.Task;
 import christopher.task.TaskList;
-import christopher.task.WrongInstructionException;
 
+/**
+ * Handles the prodecures when the user wants to insert an event object into the taskList
+ */
 public class EventCommand extends Command {
-    private String input;
     private Task task;
     private TaskList taskList;
-    private Parser parser = new Parser();
 
-    public EventCommand(String input, TaskList taskList) throws WrongInstructionException {
-        this.input = input;
+    public EventCommand(Task task, TaskList taskList) {
+        this.task = task;
         this.taskList = taskList;
-        this.task = this.parser.parseEvent(input);
     }
 
     /**
-     * add this event task into the taskList to be passed in my Christopher during construction
+     * Adds this event task into the taskList to be passed in my Christopher during construction
      */
     @Override
     public void execute() {
@@ -26,6 +24,7 @@ public class EventCommand extends Command {
     }
 
     /**
+     * Gives the String to be printed for the user to see
      *
      * @return the string to be said to the user
      */
