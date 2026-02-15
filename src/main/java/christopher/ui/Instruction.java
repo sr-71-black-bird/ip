@@ -3,7 +3,7 @@ package christopher.ui;
 /**
  * This is an enum for all the possible commands chatbot christopher.ui.Christopher could take
  */
-public enum Command {
+public enum Instruction {
     TODO, DEADLINE, EVENT, LIST, BYE, MARK, UNMARK, DELETE, FIND, UNKNOWN;
 
     /**
@@ -11,11 +11,11 @@ public enum Command {
      * @param input specified by user
      * @return one of the enum listed above
      */
-    public static Command from(String input) {
+    public static Instruction from(String input) {
         String commandWord = input.trim().split(" ")[0].toUpperCase();
 
         try {
-            return Command.valueOf(commandWord);
+            return Instruction.valueOf(commandWord);
         } catch (IllegalArgumentException e) {
             return UNKNOWN;
         }

@@ -16,7 +16,7 @@ public class Task {
      */
     public Task(String name) throws WrongInstructionException {
         if (name.equals("")) {
-            throw new WrongInstructionException("christopher.task.Task name invalid");
+            throw new WrongInstructionException("Task name invalid");
         }
         this.name = name;
         this.isDone = false;
