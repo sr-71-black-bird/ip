@@ -16,32 +16,35 @@ public class Parser {
         this.taskList = taskList;
         this.storage = storage;
     }
-    /*
-    public Command parse(String input) throws {
-        Instruction instruction = Instruction.from(input);
+
+    public Command parse(String userInput) throws WrongInstructionException {
+        Instruction instruction = Instruction.from(userInput);
         switch (instruction) {
         case TODO:
-            return parseToDo(input);
+            return this.parseToDo(userInput);
         case DEADLINE:
-            break;
+            return this.parseDeadline(userInput);
         case EVENT:
-            break;
+            return this.parseEvent(userInput);
         case LIST:
-            break;
+            return this.parseList(userInput);
         case BYE:
-            break;
+            return this.parseBye(userInput);
         case MARK:
-            break;
+            return this.parseMark(userInput);
         case UNMARK:
-            break;
+            return this.parseUnmark(userInput);
         case DELETE:
-            break;
+            return this.parseDelete(userInput);
         case FIND:
-            break;
+            return this.parseFind(userInput);
         case UNKNOWN:
-            break;
+            throw new WrongInstructionException("Command is unrecognized");
+        default:
+            throw new WrongInstructionException("You have broken the program, wow!");
         }
-     */
+    }
+
     /**
      * Parses user input and returns a ToDoCommand
      *
@@ -145,3 +148,5 @@ public class Parser {
         return new DeleteCommand(deleteIndex, this.taskList, deleteTask);
     }
 }
+
+

@@ -6,7 +6,7 @@ import christopher.task.TaskList;
 /**
  * Handles procedures when the user decides to add todo into the taskList
  */
-public class ToDoCommand extends Command{
+public class ToDoCommand extends Command {
     private Task task;
     private TaskList taskList;
 

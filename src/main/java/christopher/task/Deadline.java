@@ -20,9 +20,6 @@ public class Deadline extends Task {
      */
     public Deadline(String name, String deadline) throws WrongInstructionException, DateTimeParseException {
         super(name);
-        if (deadline.equals("")) {
-            throw new WrongInstructionException("christopher.task.Task deadline invalid");
-        }
         DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
         this.deadline = LocalDateTime.parse(deadline, inputFormatter);
     }
