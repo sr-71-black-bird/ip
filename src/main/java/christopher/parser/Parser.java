@@ -3,6 +3,7 @@ package christopher.parser;
 import christopher.command.*;
 import christopher.storage.Storage;
 import christopher.task.*;
+import christopher.ui.Instruction;
 
 /**
  * This class is primarily used to interpret the user's inputs
@@ -15,7 +16,32 @@ public class Parser {
         this.taskList = taskList;
         this.storage = storage;
     }
-
+    /*
+    public Command parse(String input) throws {
+        Instruction instruction = Instruction.from(input);
+        switch (instruction) {
+        case TODO:
+            return parseToDo(input);
+        case DEADLINE:
+            break;
+        case EVENT:
+            break;
+        case LIST:
+            break;
+        case BYE:
+            break;
+        case MARK:
+            break;
+        case UNMARK:
+            break;
+        case DELETE:
+            break;
+        case FIND:
+            break;
+        case UNKNOWN:
+            break;
+        }
+     */
     /**
      * Parses user input and returns a ToDoCommand
      *
@@ -94,5 +120,28 @@ public class Parser {
      */
     public ByeCommand parseBye(String input) {
         return new ByeCommand(this.taskList, this.storage);
+    }
+
+    /**
+     * Parses a find command and returns the handler for this command
+     *
+     * @param input the user's find command
+     * @return a FindCommand(keywords to be searched, the taskList from christopher)
+     */
+    public FindCommand parseFind(String input) {
+        System.out.println("Here are the matching tasks in your list");
+        return new FindCommand(input.split(" "), this.taskList);
+    }
+
+    /**
+     * Parses a delete command and returns the command object that deals with deleting
+     *
+     * @param input user's delete command in string form
+     * @return DeleteCommand(position of task to be deleted, christopher's tasklist, the task to be deleted)
+     */
+    public DeleteCommand parseDelete(String input) {
+        int deleteIndex = Integer.parseInt(input.split(" ")[1]) - 1;
+        Task deleteTask = taskList.getTask(deleteIndex);
+        return new DeleteCommand(deleteIndex, this.taskList, deleteTask);
     }
 }
