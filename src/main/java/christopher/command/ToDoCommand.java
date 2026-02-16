@@ -2,6 +2,7 @@ package christopher.command;
 
 import christopher.task.Task;
 import christopher.task.TaskList;
+import christopher.task.ToDo;
 
 /**
  * Handles procedures when the user decides to add todo into the taskList
@@ -20,6 +21,7 @@ public class ToDoCommand extends Command {
      */
     @Override
     public void execute() {
+        assert (this.task instanceof ToDo) : "Assumed to be a todo task";
         this.taskList.add(this.task);
     }
 
