@@ -1,5 +1,6 @@
 package christopher.command;
 
+import christopher.task.Deadline;
 import christopher.task.Task;
 import christopher.task.TaskList;
 
@@ -20,6 +21,7 @@ public class DeadlineCommand extends Command {
      */
     @Override
     public void execute() {
+        assert (this.task instanceof Deadline) : "Assumed to be a deadline task";
         taskList.add(this.task);
     }
 
