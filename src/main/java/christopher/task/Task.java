@@ -10,7 +10,8 @@ public class Task {
     private boolean isDone;
 
     /**
-     * creates a Task object
+     * Creates a Task object
+     *
      * @param name task to do
      * @throws WrongInstructionException wrongly formatted or incomplete info
      */
@@ -42,6 +43,7 @@ public class Task {
 
     /**
      * Check if it is done
+     *
      * @return the isDone status of said task
      */
     public boolean isDone() {

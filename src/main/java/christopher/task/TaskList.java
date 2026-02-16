@@ -13,7 +13,8 @@ public class TaskList {
     }
 
     /**
-     * This method takes in a task and add it to our taskList
+     * Takes in a task and add it to our taskList
+     *
      * @param task The task to be added into the list
      */
     public void add(Task task) {
@@ -21,7 +22,8 @@ public class TaskList {
     }
 
     /**
-     * This method marks the task at the specified position to be "complete"
+     * Marks the task at the specified position to be "complete"
+     *
      * @param index the position of the desired task - 1 (e.g task3 has index 2)
      */
     public void complete(int index) {
@@ -29,7 +31,8 @@ public class TaskList {
     }
 
     /**
-     * This method marks the task at the specified position to be "incomplete"
+     * Marks the task at the specified position to be "incomplete"
+     *
      * @param index the position of the desired task - 1 (e.g task3 has index 2)
      */
     public void undoComplete(int index) {
@@ -37,7 +40,8 @@ public class TaskList {
     }
 
     /**
-     * This method returns the task at the specified position
+     * Returns the task at the specified position
+     *
      * @param index index is one less than position (e.g task3 has index 2)
      * @return the object of the desired task
      */
@@ -46,7 +50,8 @@ public class TaskList {
     }
 
     /**
-     * This method returns the number of tasks in the list
+     * Returns the number of tasks in the list
+     *
      * @return the number of tasks in the list
      */
     public int getTotalTask() {
@@ -54,7 +59,8 @@ public class TaskList {
     }
 
     /**
-     * This method removes the specified task from the list
+     * Removes the specified task from the list
+     *
      * @param index the position of the task to be removed - 1 (e.g task3 has index 2)
      */
     public void delete(int index) {
@@ -62,7 +68,8 @@ public class TaskList {
     }
 
     /**
-     * Find the desired tasks based on keywords in an array form
+     * Finds the desired tasks based on keywords in an array form
+     *
      * @param keywords the specified keywords to look out for
      * @return TaskList containing the list of desired tasks
      */

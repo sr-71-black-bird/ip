@@ -12,7 +12,8 @@ public class Deadline extends Task {
     private LocalDateTime deadline;
 
     /**
-     * This creates a deadline object
+     * Creates a deadline object
+     *
      * @param name the name or the task body
      * @param deadline date and time of the deadline
      * @throws WrongInstructionException when the user doesn't input enough info
@@ -25,7 +26,8 @@ public class Deadline extends Task {
     }
 
     /**
-     * This returns the deadline date
+     * Returns the deadline date
+     *
      * @return as above
      */
     public LocalDateTime getDeadline() {

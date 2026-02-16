@@ -19,6 +19,7 @@ public class FindCommand extends Command {
      */
     @Override
     public void execute() {
+        assert (keywords.length > 0) : "Assumed there's actually some keywords";
         this.result = this.taskList.find(keywords);
     }
 

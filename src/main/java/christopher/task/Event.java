@@ -15,7 +15,8 @@ public class Event extends Task {
     private LocalDateTime end;
 
     /**
-     * creates an event object
+     * Creates an event object
+     *
      * @param name what the task is
      * @param start date and time where it starts
      * @param end date and time where it ends

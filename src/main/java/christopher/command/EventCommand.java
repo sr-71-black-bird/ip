@@ -1,5 +1,6 @@
 package christopher.command;
 
+import christopher.task.Event;
 import christopher.task.Task;
 import christopher.task.TaskList;
 
@@ -20,6 +21,7 @@ public class EventCommand extends Command {
      */
     @Override
     public void execute() {
+        assert (this.task instanceof Event) : "Assumed to be an event task";
         this.taskList.add(this.task);
     }
 
