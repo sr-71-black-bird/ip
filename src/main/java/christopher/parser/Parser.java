@@ -72,6 +72,7 @@ public class Parser {
 
     /**
      * Parses user input and returns an EventCommand
+     *
      * @param input user input
      * @return EventCommand object
      * @throws ArrayIndexOutOfBoundsException throws when user did not fill in all parts

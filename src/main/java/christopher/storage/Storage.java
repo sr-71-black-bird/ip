@@ -46,7 +46,8 @@ public class Storage {
     }
 
     /**
-     * This is for reading a line in the save file and return the corresponding task
+     * Reads a line in the save file and return the corresponding task
+     *
      * @param line a line in the save file
      * @return the task indicated by the line in save file
      * @throws WrongInstructionException when the lines written in save file doesn't match any existing task format
@@ -81,7 +82,8 @@ public class Storage {
     }
 
     /**
-     * This loads whatever tasks inside text.txt into the taskList when chatbot starts up
+     * Loads whatever tasks inside text.txt into the taskList when chatbot starts up
+     *
      * @return Arraylist of tasks for taskList to be initialized with
      * @throws IOException throws when there is an issue with the file in question
      */

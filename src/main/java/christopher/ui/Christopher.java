@@ -18,11 +18,6 @@ import christopher.task.WrongInstructionException;
  * This is the chatbot, christopher.ui.Christopher, he will greet the user, and take commands until a bye was said
  */
 public class Christopher {
-    /*
-    private Greeting greeting = new Greeting("christopher.ui.Christopher");
-    private Storage storage = new Storage();
-    private TaskList taskList = new TaskList(storage.load());
-     */
     private final TaskList taskList;
     private final Storage storage;
     private final Parser parser;
