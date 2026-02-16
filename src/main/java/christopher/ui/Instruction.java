@@ -7,7 +7,8 @@ public enum Instruction {
     TODO, DEADLINE, EVENT, LIST, BYE, MARK, UNMARK, DELETE, FIND, UNKNOWN;
 
     /**
-     * This method takes a command given by the user and match it to one of the enum types
+     * Takes a command given by the user and match it to one of the enum types
+     *
      * @param input specified by user
      * @return one of the enum listed above
      */

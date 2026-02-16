@@ -31,6 +31,7 @@ public class ByeCommand extends Command {
 
     /**
      * Says bye to the user
+     *
      * @return a string: "Bye"
      */
     @Override

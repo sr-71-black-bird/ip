@@ -24,7 +24,8 @@ public class ToDoCommand extends Command {
     }
 
     /**
-     * Returns the string to be said by christopher to the user
+     * Returns the confirmation and the state of the taskList
+     *
      * @return the string to be said by christopher to the user
      */
     @Override

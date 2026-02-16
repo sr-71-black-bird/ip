@@ -24,6 +24,7 @@ public class UnmarkCommand extends Command {
 
     /**
      * Returns verifying the unmarking of the specified task
+     *
      * @return String to be shown to user
      */
     @Override
