@@ -23,6 +23,7 @@ public class MarkCommand extends Command {
 
     /**
      * Returns the string to be said to the user
+     *
      * @return the string shown to user
      */
     @Override

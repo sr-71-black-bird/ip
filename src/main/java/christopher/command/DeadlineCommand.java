@@ -17,7 +17,7 @@ public class DeadlineCommand extends Command {
     }
 
     /**
-     * This carries out and add this deadline task to the taskList passed
+     * Carries out and add this deadline task to the taskList passed
      */
     @Override
     public void execute() {
@@ -26,6 +26,8 @@ public class DeadlineCommand extends Command {
     }
 
     /**
+     * Returns the confirmation and the state of taskList
+     *
      * @return the string to be said to the user
      */
     public String getResponse() {
