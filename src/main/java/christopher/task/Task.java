@@ -1,5 +1,8 @@
 package christopher.task;
 
+import java.time.LocalDateTime;
+import java.util.Optional;
+
 /**
  * This is task class; it will have children of specific task types
  * It has a name, and an indication of whether it is done
@@ -48,6 +51,15 @@ public class Task {
      */
     public boolean isDone() {
         return this.isDone;
+    }
+
+    /**
+     * Returns the deadline as an optional as some types of tasks may not have a deadline
+     *
+     * @return Optional which contains a local date and time
+     */
+    public Optional<LocalDateTime> getDeadline() {
+        return Optional.empty();
     }
 
     @Override

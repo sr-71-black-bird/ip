@@ -26,7 +26,7 @@ public class DeadlineTask {
 
     @Test
     public void checkDate_success() {
-        assertEquals(deadline, t1.getDeadline());
+        assertEquals(deadline, t1.getDeadline().orElse(null));
     }
 
     public Deadline getDeadlineObject() {

@@ -3,6 +3,7 @@ package christopher.task;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+import java.util.Optional;
 
 /**
  * This is an "event", a type of task
@@ -42,6 +43,15 @@ public class Event extends Task {
 
     public LocalDateTime getEnd() {
         return this.end;
+    }
+
+    /**
+     * Returns the end time of the event as an optional
+     *
+     * @return Optional (end time)
+     */
+    public Optional<LocalDateTime> getDeadline() {
+        return Optional.of(this.end);
     }
 
     @Override
