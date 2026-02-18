@@ -12,7 +12,7 @@ import java.util.Comparator;
  */
 public class SortCommand extends Command {
     private TaskList taskList;
-    private Comparator<Task> byDeadline
+    private Comparator<Task> byDeadline;
 
     public SortCommand(TaskList taskList) {
         this.taskList = new TaskList(new ArrayList<>(taskList.getList()));
