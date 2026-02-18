@@ -67,6 +67,10 @@ public class TaskList {
         this.list.remove(index);
     }
 
+    public ArrayList<Task> getList() {
+        return this.list;
+    }
+
     /**
      * Finds the desired tasks based on keywords in an array form
      *

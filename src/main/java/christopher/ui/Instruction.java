@@ -4,7 +4,7 @@ package christopher.ui;
  * This is an enum for all the possible commands chatbot christopher.ui.Christopher could take
  */
 public enum Instruction {
-    TODO, DEADLINE, EVENT, LIST, BYE, MARK, UNMARK, DELETE, FIND, UNKNOWN;
+    TODO, DEADLINE, EVENT, LIST, BYE, MARK, UNMARK, DELETE, FIND, SORT, UNKNOWN;
 
     /**
      * Takes a command given by the user and match it to one of the enum types

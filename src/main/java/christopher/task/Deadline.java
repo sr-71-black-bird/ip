@@ -3,6 +3,7 @@ package christopher.task;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+import java.util.Optional;
 
 /**
  * This is a form of task, specifically a task with a deadline attached
@@ -26,12 +27,12 @@ public class Deadline extends Task {
     }
 
     /**
-     * Returns the deadline date
+     * Returns the deadline date as an optional
      *
      * @return as above
      */
-    public LocalDateTime getDeadline() {
-        return this.deadline;
+    public Optional<LocalDateTime> getDeadline() {
+        return Optional.of(this.deadline);
     }
 
     @Override

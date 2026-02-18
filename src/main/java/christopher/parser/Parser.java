@@ -38,6 +38,8 @@ public class Parser {
             return this.parseDelete(userInput);
         case FIND:
             return this.parseFind(userInput);
+        case SORT:
+            return this.parseSort(userInput);
         case UNKNOWN:
             throw new WrongInstructionException("Command is unrecognized");
         default:
@@ -147,6 +149,16 @@ public class Parser {
         int deleteIndex = Integer.parseInt(input.split(" ")[1]) - 1;
         Task deleteTask = taskList.getTask(deleteIndex);
         return new DeleteCommand(deleteIndex, this.taskList, deleteTask);
+    }
+
+    /**
+     * Returns the SortCommand after parsing the input, not much to parse here
+     *
+     * @param input user's instruction
+     * @return SortCommand which will sort the list
+     */
+    public SortCommand parseSort(String input) {
+        return new SortCommand(this.taskList);
     }
 }
 
