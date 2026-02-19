@@ -19,8 +19,8 @@ import christopher.task.ToDo;
 import christopher.task.WrongInstructionException;
 
 /**
- * This is a storage class, it is responsible for loading from a data tasks.txt file
- * It is also responsible for storing whatever tasks remaining into the same file
+ * Loads and saves from a data tasks.txt file.
+ * Creates a data tasks.txt file if there isn't one.
  */
 public class Storage {
     private final Path filePath;
@@ -30,9 +30,10 @@ public class Storage {
     }
 
     /**
-     * This saves the tasks in the tasklist into ./data/tasks.txt
-     * @param taskList this is the current taskList object
-     * @throws IOException thrown when the target file has various issues
+     * Saves the tasks in the tasklist into ./data/tasks.txt.
+     *
+     * @param taskList this is the current taskList object.
+     * @throws IOException thrown when the target file has various issues.
      */
     public void save(TaskList taskList) throws IOException {
         Files.createDirectories(filePath.getParent());
@@ -45,20 +46,21 @@ public class Storage {
     }
 
     /**
-     * This method takes in the body of the task written in tasks.txt and see if they are done
-     * @param taskBody only the body of the task description written to be passed in
-     * @return true if done and false if not done
+     * Takes in the body of the task written in tasks.txt and see if they are done.
+     *
+     * @param taskBody only the body of the task description written to be passed in.
+     * @return true if done and false if not done.
      */
     public boolean isDoneFromTaskBody(String taskBody) {
         return taskBody.startsWith("[X]");
     }
 
     /**
-     * Reads a line in the save file and return the corresponding task
+     * Reads a line in the save file and return the corresponding task.
      *
-     * @param line a line in the save file
-     * @return the task indicated by the line in save file
-     * @throws WrongInstructionException when the lines written in save file doesn't match any existing task format
+     * @param line a line in the save file.
+     * @return the task indicated by the line in save file.
+     * @throws WrongInstructionException when the lines written in save file doesn't match any existing task format.
      */
     public Task parseTask(String line) throws WrongInstructionException {
         String[] parts = line.substring(line.indexOf(" ") + 1).split(" \\| "); //we don't want the index
@@ -90,10 +92,10 @@ public class Storage {
     }
 
     /**
-     * Returns LocalDateTime represented by input after parsing it
+     * Returns LocalDateTime represented by input after parsing it.
      *
-     * @param input a string which represent date and time
-     * @return LocalDateTime variable which contains the date and time represented by input
+     * @param input a string which represent date and time.
+     * @return LocalDateTime variable which contains the date and time represented by input.
      */
     public LocalDateTime parseDateTime(String input) {
         DateTimeFormatter formatter =
@@ -105,10 +107,10 @@ public class Storage {
     }
 
     /**
-     * Loads whatever tasks inside text.txt into the taskList when chatbot starts up
+     * Loads whatever tasks inside text.txt into the taskList when chatbot starts up.
      *
-     * @return Arraylist of tasks for taskList to be initialized with
-     * @throws IOException throws when there is an issue with the file in question
+     * @return Arraylist of tasks for taskList to be initialized with.
+     * @throws IOException throws when there is an issue with the file in question.
      */
     public ArrayList<Task> load() throws IOException, WrongInstructionException {
         ArrayList<Task> tasks = new ArrayList<>();

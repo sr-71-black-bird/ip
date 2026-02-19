@@ -4,8 +4,7 @@ import java.time.LocalDateTime;
 import java.util.Optional;
 
 /**
- * This is a specific type of task
- * It just contains a task body
+ * Stores and retrieves information regarding a type of task that only has a description
  */
 public class ToDo extends Task {
     public ToDo(String name) throws WrongInstructionException {
@@ -13,9 +12,9 @@ public class ToDo extends Task {
     }
 
     /**
-     * Returns the empty option because this task has no deadline
+     * Returns the empty option because this task has no deadline.
      *
-     * @return Optional(empty), to be used with orElse (max time)
+     * @return Optional(empty), to be used with orElse (max time).
      */
     public Optional<LocalDateTime> getDeadline() {
         return Optional.empty();

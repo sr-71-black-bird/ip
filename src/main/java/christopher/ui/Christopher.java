@@ -11,7 +11,7 @@ import christopher.task.WrongInstructionException;
 
 
 /**
- * This is the chatbot, christopher.ui.Christopher, he will greet the user, and take commands until a bye was said
+ * Accomplishes various task related commands by the user.
  */
 public class Christopher {
     private final TaskList taskList;
@@ -37,7 +37,7 @@ public class Christopher {
     }
 
     /**
-     * Generates a response for the user's chat message
+     * Generates a response for the user's chat message.
      */
     public String getResponse(String input) {
         try {

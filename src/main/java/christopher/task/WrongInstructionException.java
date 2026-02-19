@@ -1,7 +1,8 @@
 package christopher.task;
 
 /**
- * This exception is for when components of a task input by the user are invalid
+ * Throws exception when user generally input the wrong command for various reasons.
+ * Displays the specific reason through message.
  */
 public class WrongInstructionException extends Exception {
     public WrongInstructionException(String message) {

@@ -21,7 +21,8 @@ import christopher.task.WrongInstructionException;
 import christopher.ui.Instruction;
 
 /**
- * This class is primarily used to interpret the user's inputs
+ * Interpret the user's inputs.
+ * Returns different types of commands to be executed.
  */
 public class Parser {
     private TaskList taskList;
@@ -63,10 +64,10 @@ public class Parser {
     }
 
     /**
-     * Parses user input and returns a ToDoCommand
+     * Parses user input and returns a ToDoCommand.
      *
-     * @param input the user input
-     * @return Command and more specifically a ToDoCommand
+     * @param input the user input.
+     * @return Command and more specifically a ToDoCommand.
      */
     public ToDoCommand parseToDo(String input) throws WrongInstructionException {
         String toDoInput = input.substring(input.indexOf(" ") + 1).trim();
@@ -74,12 +75,12 @@ public class Parser {
     }
 
     /**
-     * Parses user input and returns a DeadlineCommand
+     * Parses user input and returns a DeadlineCommand.
      *
-     * @param input the user input
-     * @return a DeadlineCommand
-     * @throws ArrayIndexOutOfBoundsException throws when the user did not specify a date and parse is not successful
-     * @throws WrongInstructionException      because super is called in Deadline and Task throws this
+     * @param input the user input.
+     * @return a DeadlineCommand.
+     * @throws ArrayIndexOutOfBoundsException throws when the user did not specify a date and parse is not successful.
+     * @throws WrongInstructionException      because super is called in Deadline and Task throws this.
      */
     public DeadlineCommand parseDeadline(String input) throws ArrayIndexOutOfBoundsException, WrongInstructionException {
         String[] deadlineInput = input.split(" /by ");
@@ -91,12 +92,12 @@ public class Parser {
     }
 
     /**
-     * Parses user input and returns an EventCommand
+     * Parses user input and returns an EventCommand.
      *
-     * @param input user input
-     * @return EventCommand object
-     * @throws ArrayIndexOutOfBoundsException throws when user did not fill in all parts
-     * @throws WrongInstructionException because super is called in Deadline and Task throws this
+     * @param input user input.
+     * @return EventCommand object.
+     * @throws ArrayIndexOutOfBoundsException throws when user did not fill in all parts.
+     * @throws WrongInstructionException because super is called in Deadline and Task throws this.
      */
     public EventCommand parseEvent(String input) throws ArrayIndexOutOfBoundsException, WrongInstructionException {
         String[] eventInput = input.split("/event | /from | /to ");
@@ -108,10 +109,10 @@ public class Parser {
     }
 
     /**
-     * Parses a mark command input and returns the handler for such a command
+     * Parses a mark command input and returns the handler for such a command.
      *
-     * @param input user's input
-     * @return MarkCommand object
+     * @param input user's input.
+     * @return MarkCommand object.
      */
     public MarkCommand parseMark(String input) throws WrongInstructionException {
         int index = Integer.parseInt(input.split(" ")[1]) - 1;
@@ -125,10 +126,10 @@ public class Parser {
     }
 
     /**
-     * Parses an unmark command input and returns the handler for the unmark command
+     * Parses an unmark command input and returns the handler for the unmark command.
      *
-     * @param input user's input
-     * @return UnmarkCommand object
+     * @param input user's input.
+     * @return UnmarkCommand object.
      */
     public UnmarkCommand parseUnmark(String input) throws WrongInstructionException {
         int unmarkIndex = Integer.parseInt(input.split(" ")[1]) - 1;
@@ -143,30 +144,30 @@ public class Parser {
     }
 
     /**
-     * Parses a list command by the user and returns the handler for this command
+     * Parses a list command by the user and returns the handler for this command.
      *
-     * @param input confirmed to be a list instruction
-     * @return ListCommand object
+     * @param input confirmed to be a list instruction.
+     * @return ListCommand object.
      */
     public ListCommand parseList(String input) {
         return new ListCommand(this.taskList);
     }
 
     /**
-     * Parses a bye command and returns the handler for this command
+     * Parses a bye command and returns the handler for this command.
      *
-     * @param input bye command by the user
-     * @return ByeCommand(the taskList from christopher, the storage from christopher)
+     * @param input bye command by the user.
+     * @return ByeCommand(the taskList from christopher, the storage from christopher).
      */
     public ByeCommand parseBye(String input) {
         return new ByeCommand(this.taskList, this.storage);
     }
 
     /**
-     * Parses a find command and returns the handler for this command
+     * Parses a find command and returns the handler for this command.
      *
-     * @param input the user's find command
-     * @return a FindCommand(keywords to be searched, the taskList from christopher)
+     * @param input the user's find command.
+     * @return a FindCommand(keywords to be searched, the taskList from christopher).
      */
     public FindCommand parseFind(String input) throws WrongInstructionException {
         if (input.equals("find")) {
@@ -176,10 +177,10 @@ public class Parser {
     }
 
     /**
-     * Parses a delete command and returns the command object that deals with deleting
+     * Parses a delete command and returns the command object that deals with deleting.
      *
-     * @param input user's delete command in string form
-     * @return DeleteCommand(position of task to be deleted, christopher's tasklist, the task to be deleted)
+     * @param input user's delete command in string form.
+     * @return DeleteCommand(position of task to be deleted, christopher's tasklist, the task to be deleted).
      */
     public DeleteCommand parseDelete(String input) throws WrongInstructionException {
         int deleteIndex = Integer.parseInt(input.split(" ")[1]) - 1;
@@ -194,10 +195,10 @@ public class Parser {
     }
 
     /**
-     * Returns the SortCommand after parsing the input, not much to parse here
+     * Returns the SortCommand after parsing the input, not much to parse here.
      *
-     * @param input user's instruction
-     * @return SortCommand which will sort the list
+     * @param input user's instruction.
+     * @return SortCommand which will sort the list.
      */
     public SortCommand parseSort(String input) {
         return new SortCommand(this.taskList);

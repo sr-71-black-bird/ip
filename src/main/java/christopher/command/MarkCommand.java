@@ -3,7 +3,7 @@ package christopher.command;
 import christopher.task.TaskList;
 
 /**
- * Handles procedures when the user inserted mark command
+ * Handles procedures when the user inserted mark command.
  */
 public class MarkCommand extends Command {
     private TaskList taskList;
@@ -15,7 +15,7 @@ public class MarkCommand extends Command {
     }
 
     /**
-     * Completes the specified task
+     * Completes the specified task.
      */
     @Override
     public void execute() {
@@ -23,9 +23,9 @@ public class MarkCommand extends Command {
     }
 
     /**
-     * Returns the string to be said to the user
+     * Returns the string to be said to the user.
      *
-     * @return the string shown to user
+     * @return the string shown to user.
      */
     @Override
     public String getResponse() {

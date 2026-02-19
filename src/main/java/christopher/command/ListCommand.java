@@ -3,7 +3,7 @@ package christopher.command;
 import christopher.task.TaskList;
 
 /**
- * Handles the procedures when user's input has been confirmed to be a List instruction
+ * Handles the procedures when user's input has been confirmed to be a List instruction.
  */
 public class ListCommand extends Command {
     private TaskList taskList;
@@ -13,7 +13,7 @@ public class ListCommand extends Command {
     }
 
     /**
-     * Does nothing since list instruction has nothing to be done
+     * Does nothing since list instruction has nothing to be done.
      */
     @Override
     public void execute() {
@@ -21,8 +21,9 @@ public class ListCommand extends Command {
     }
 
     /**
-     * Returns the current state of TaskList in a string form
-     * @return toString() representation of taskList
+     * Returns the current state of TaskList in a string form.
+     *
+     * @return toString() representation of taskList.
      */
     @Override
     public String getResponse() {

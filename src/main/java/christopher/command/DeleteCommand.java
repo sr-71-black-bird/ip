@@ -4,7 +4,7 @@ import christopher.task.Task;
 import christopher.task.TaskList;
 
 /**
- * Handles the procedures to be done when user command is confirmed to be a delete command
+ * Handles the procedures to be done when user command is confirmed to be a delete command.
  */
 public class DeleteCommand extends Command {
     private int index;
@@ -18,7 +18,7 @@ public class DeleteCommand extends Command {
     }
 
     /**
-     * Deletes the specified task
+     * Deletes the specified task.
      */
     @Override
     public void execute() {
@@ -26,8 +26,8 @@ public class DeleteCommand extends Command {
     }
 
     /**
-     * Confirms task has been deleted
-     * Notifies user of the current state of taskList
+     * Confirms task has been deleted.
+     * Notifies user of the current state of taskList.
      *
      * @return String containing information above
      */

@@ -6,7 +6,7 @@ import christopher.task.WrongInstructionException;
 import java.util.ArrayList;
 
 /**
- * Executes the find command when the user is confirmed to be choosing such command
+ * Executes the find command when the user is confirmed to be choosing such command.
  */
 public class FindCommand extends Command {
     private TaskList taskList;
@@ -24,7 +24,7 @@ public class FindCommand extends Command {
     }
 
     /**
-     * Finds the matching tasks given a set of keywords
+     * Finds the matching tasks given a set of keywords.
      */
     @Override
     public void execute() {
@@ -33,9 +33,9 @@ public class FindCommand extends Command {
     }
 
     /**
-     * Informs the user which tasks match the ones they want to find
+     * Informs the user which tasks match the ones they want to find.
      *
-     * @return the TaskList.toString() of the tasks they are interested in
+     * @return the TaskList.toString() of the tasks they are interested in.
      */
     @Override
     public String getResponse() {

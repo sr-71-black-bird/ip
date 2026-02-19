@@ -4,19 +4,18 @@ import java.time.LocalDateTime;
 import java.util.Optional;
 
 /**
- * This is task class; it will have children of specific task types
- * It has a name, and an indication of whether it is done
- * Can be done or undone
+ * Parents for various types of subclasses.
+ * Has a task name, which every task should have.
  */
 public class Task {
     private String name;
     private boolean isDone;
 
     /**
-     * Creates a Task object
+     * Creates a Task object.
      *
-     * @param name task to do
-     * @throws WrongInstructionException wrongly formatted or incomplete info
+     * @param name task to do.
+     * @throws WrongInstructionException wrongly formatted or incomplete info.
      */
     public Task(String name) throws WrongInstructionException {
         if (name.equals("")) {
@@ -31,32 +30,32 @@ public class Task {
     }
 
     /**
-     * Marks the specific task instance to be complete
+     * Marks the specific task instance to be complete.
      */
     public void complete() {
         this.isDone = true;
     }
 
     /**
-     * Marks the specific task instance to be incomplete
+     * Marks the specific task instance to be incomplete.
      */
     public void undoComplete() {
         this.isDone = false;
     }
 
     /**
-     * Check if it is done
+     * Checks if it is done.
      *
-     * @return the isDone status of said task
+     * @return the isDone status of said task.
      */
     public boolean isDone() {
         return this.isDone;
     }
 
     /**
-     * Returns the deadline as an optional as some types of tasks may not have a deadline
+     * Returns the deadline as an optional as some types of tasks may not have a deadline.
      *
-     * @return Optional which contains a local date and time
+     * @return Optional which contains a local date and time.
      */
     public Optional<LocalDateTime> getDeadline() {
         return Optional.empty();

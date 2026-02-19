@@ -6,23 +6,20 @@ import java.time.format.DateTimeParseException;
 import java.util.Optional;
 
 /**
- * This is an "event", a type of task
- * It contains the start time and end time and a body
- * Start time indicated by /from
- * End time indicated by /by
+ * Stores and returns information about a type of task which has a start and an end.
  */
 public class Event extends Task {
     private LocalDateTime start;
     private LocalDateTime end;
 
     /**
-     * Creates an event object
+     * Creates an event object.
      *
-     * @param name what the task is
-     * @param start date and time where it starts
-     * @param end date and time where it ends
-     * @throws WrongInstructionException missing information or wrong format
-     * @throws DateTimeParseException wrong format for date and time
+     * @param name what the task is.
+     * @param start date and time where it starts.
+     * @param end date and time where it ends.
+     * @throws WrongInstructionException missing information or wrong format.
+     * @throws DateTimeParseException wrong format for date and time.
      */
     public Event(String name, String start, String end) throws WrongInstructionException, DateTimeParseException {
         super(name);
@@ -41,11 +38,11 @@ public class Event extends Task {
     }
 
     /**
-     * Cretes an event object with given task name, start and end times
+     * Cretes an event object with given task name, start and end times.
      *
-     * @param name String showing what the task is
-     * @param start when event begins in LocalDateTime
-     * @param end when event ends in LocalDateTime
+     * @param name String showing what the task is.
+     * @param start when event begins in LocalDateTime.
+     * @param end when event ends in LocalDateTime.
      */
     public Event(String name, LocalDateTime start, LocalDateTime end) throws WrongInstructionException {
         super(name);
@@ -62,9 +59,9 @@ public class Event extends Task {
     }
 
     /**
-     * Returns the end time of the event as an optional
+     * Returns the end time of the event as an optional.
      *
-     * @return Optional (end time)
+     * @return Optional (end time).
      */
     public Optional<LocalDateTime> getDeadline() {
         return Optional.of(this.end);

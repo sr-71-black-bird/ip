@@ -6,19 +6,18 @@ import java.time.format.DateTimeParseException;
 import java.util.Optional;
 
 /**
- * This is a form of task, specifically a task with a deadline attached
- * christopher.task.Deadline is specified by the "/by" indication during user input
+ * Stores information and gives information about a type of task with a deadline.
  */
 public class Deadline extends Task {
     private LocalDateTime deadline;
 
     /**
-     * Creates a deadline object
+     * Creates a deadline object.
      *
-     * @param name the name or the task body
-     * @param deadline date and time of the deadline
-     * @throws WrongInstructionException when the user doesn't input enough info
-     * @throws DateTimeParseException when the wrong format is given for date and time
+     * @param name the name or the task body.
+     * @param deadline date and time of the deadline.
+     * @throws WrongInstructionException when the user doesn't input enough info.
+     * @throws DateTimeParseException when the wrong format is given for date and time.
      */
     public Deadline(String name, String deadline) throws WrongInstructionException, DateTimeParseException {
         super(name);
@@ -27,10 +26,10 @@ public class Deadline extends Task {
     }
 
     /**
-     * Creates deadline object with given name and the given deadline
+     * Creates deadline object with given name and the given deadline.
      *
-     * @param name string showing what the task is
-     * @param deadline LocalDateTime where the task must be completed by
+     * @param name string showing what the task is.
+     * @param deadline LocalDateTime where the task must be completed by.
      */
     public Deadline(String name, LocalDateTime deadline) throws WrongInstructionException {
         super(name);
@@ -38,9 +37,9 @@ public class Deadline extends Task {
     }
 
     /**
-     * Returns the deadline date as an optional
+     * Returns the deadline date as an optional.
      *
-     * @return as above
+     * @return as above.
      */
     public Optional<LocalDateTime> getDeadline() {
         return Optional.of(this.deadline);

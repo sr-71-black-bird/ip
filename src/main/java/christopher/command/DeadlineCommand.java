@@ -5,7 +5,7 @@ import christopher.task.Task;
 import christopher.task.TaskList;
 
 /**
- * This class handles the things to be done when the user decides to add a deadline task to the list
+ * Handles the things to be done when the user decides to add a deadline task to the list.
  */
 public class DeadlineCommand extends Command {
     private Task task;
@@ -17,7 +17,7 @@ public class DeadlineCommand extends Command {
     }
 
     /**
-     * Carries out and add this deadline task to the taskList passed
+     * Carries out and add this deadline task to the taskList passed.
      */
     @Override
     public void execute() {
@@ -26,9 +26,9 @@ public class DeadlineCommand extends Command {
     }
 
     /**
-     * Returns the confirmation and the state of taskList
+     * Returns the confirmation and the state of taskList.
      *
-     * @return the string to be said to the user
+     * @return the string to be said to the user.
      */
     public String getResponse() {
         return String.format("Got it. I've added this task:\n%s\nNow you have %d tasks", this.task,

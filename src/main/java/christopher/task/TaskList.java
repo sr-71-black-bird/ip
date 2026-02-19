@@ -3,7 +3,7 @@ package christopher.task;
 import java.util.ArrayList;
 
 /**
- * This is a taskList, it will maintain an array containing tasks on the list
+ * Maintains information regarding a list of currently held tasks.
  */
 public class TaskList {
     private ArrayList<Task> list;
@@ -13,55 +13,55 @@ public class TaskList {
     }
 
     /**
-     * Takes in a task and add it to our taskList
+     * Takes in a task and add it to our taskList.
      *
-     * @param task The task to be added into the list
+     * @param task The task to be added into the list.
      */
     public void add(Task task) {
         this.list.add(task);
     }
 
     /**
-     * Marks the task at the specified position to be "complete"
+     * Marks the task at the specified position to be "complete."
      *
-     * @param index the position of the desired task - 1 (e.g task3 has index 2)
+     * @param index the position of the desired task - 1 (e.g task3 has index 2).
      */
     public void complete(int index) {
         this.list.get(index).complete();
     }
 
     /**
-     * Marks the task at the specified position to be "incomplete"
+     * Marks the task at the specified position to be "incomplete."
      *
-     * @param index the position of the desired task - 1 (e.g task3 has index 2)
+     * @param index the position of the desired task - 1 (e.g task3 has index 2).
      */
     public void undoComplete(int index) {
         this.list.get(index).undoComplete();
     }
 
     /**
-     * Returns the task at the specified position
+     * Returns the task at the specified position.
      *
-     * @param index index is one less than position (e.g task3 has index 2)
-     * @return the object of the desired task
+     * @param index index is one less than position (e.g task3 has index 2).
+     * @return the object of the desired task.
      */
     public Task getTask(int index) {
         return this.list.get(index);
     }
 
     /**
-     * Returns the number of tasks in the list
+     * Returns the number of tasks in the list.
      *
-     * @return the number of tasks in the list
+     * @return the number of tasks in the list.
      */
     public int getTotalTask() {
         return this.list.size();
     }
 
     /**
-     * Removes the specified task from the list
+     * Removes the specified task from the list.
      *
-     * @param index the position of the task to be removed - 1 (e.g task3 has index 2)
+     * @param index the position of the task to be removed - 1 (e.g task3 has index 2).
      */
     public void delete(int index) {
         this.list.remove(index);
@@ -72,10 +72,10 @@ public class TaskList {
     }
 
     /**
-     * Finds the desired tasks based on keywords in an array form
+     * Finds the desired tasks based on keywords in an array form.
      *
-     * @param keywords the specified keywords to look out for
-     * @return TaskList containing the list of desired tasks
+     * @param keywords the specified keywords to look out for.
+     * @return TaskList containing the list of desired task.
      */
     public TaskList find(String[] keywords) {
         TaskList result = new TaskList(new ArrayList<>());

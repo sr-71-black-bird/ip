@@ -6,7 +6,7 @@ import christopher.task.TaskList;
 import java.io.IOException;
 
 /**
- * Handles the procedures when user's input has been confirmed to be a bye instruction
+ * Handles the procedures when user's input has been confirmed to be a bye instruction.
  */
 public class ByeCommand extends Command {
     private Storage storage;
@@ -18,7 +18,7 @@ public class ByeCommand extends Command {
     }
 
     /**
-     * Saves the current taskList to tasks.txt data file
+     * Saves the current taskList to tasks.txt data file.
      */
     @Override
     public void execute() {
@@ -30,9 +30,9 @@ public class ByeCommand extends Command {
     }
 
     /**
-     * Says bye to the user
+     * Says bye to the user.
      *
-     * @return a string: "Bye"
+     * @return a string: "Bye."
      */
     @Override
     public String getResponse() {

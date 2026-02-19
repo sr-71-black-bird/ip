@@ -3,7 +3,7 @@ package christopher.command;
 import christopher.task.TaskList;
 
 /**
- * Handles when the user wants an unmarkCommand
+ * Handles when the user wants an unmarkCommand.
  */
 public class UnmarkCommand extends Command {
     private int index;
@@ -15,7 +15,7 @@ public class UnmarkCommand extends Command {
     }
 
     /**
-     * Unmark the specified task at the index position
+     * Unmarks the specified task at the index position.
      */
     @Override
     public void execute() {
@@ -23,9 +23,9 @@ public class UnmarkCommand extends Command {
     }
 
     /**
-     * Returns verifying the unmarking of the specified task
+     * Returns verifying the unmarking of the specified task.
      *
-     * @return String to be shown to user
+     * @return String to be shown to user.
      */
     @Override
     public String getResponse() {

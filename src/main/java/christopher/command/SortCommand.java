@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 
 /**
- * Handles procedures when user wants to sort tasks by "deadline"
+ * Handles procedures when user wants to sort tasks by "deadline."
  */
 public class SortCommand extends Command {
     private TaskList taskList;
@@ -20,7 +20,7 @@ public class SortCommand extends Command {
     }
 
     /**
-     * the new taskList that is held by this object is sorted according to deadline
+     * Returns the sorted task list.
      */
     @Override
     public void execute() {
@@ -28,9 +28,9 @@ public class SortCommand extends Command {
     }
 
     /**
-     * Gives the newly sorted taskList
+     * Prints the newly sorted taskList.
      *
-     * @return taskList.string() for the newly sorted list
+     * @return taskList.string() for the newly sorted list.
      */
     @Override
     public String getResponse() {

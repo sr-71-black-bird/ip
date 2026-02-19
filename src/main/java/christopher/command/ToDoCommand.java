@@ -5,7 +5,7 @@ import christopher.task.TaskList;
 import christopher.task.ToDo;
 
 /**
- * Handles procedures when the user decides to add todo into the taskList
+ * Handles procedures when the user decides to add TD task into the taskList.
  */
 public class ToDoCommand extends Command {
     private Task task;
@@ -17,7 +17,7 @@ public class ToDoCommand extends Command {
     }
 
     /**
-     * Carries out toDo command which is to add this into the taskList
+     * Carries out TD command which is to add this into the taskList.
      */
     @Override
     public void execute() {
@@ -26,9 +26,9 @@ public class ToDoCommand extends Command {
     }
 
     /**
-     * Returns the confirmation and the state of the taskList
+     * Returns the confirmation and the state of the taskList.
      *
-     * @return the string to be said by christopher to the user
+     * @return the string to be said by christopher to the user.
      */
     @Override
     public String getResponse() {
