@@ -32,6 +32,14 @@ public class Christopher {
         System.out.println("Hello");
     }
 
+    public Storage getStorage() {
+        return this.storage;
+    }
+
+    public TaskList getTaskList() {
+        return this.taskList;
+    }
+
     /**
      * Generates a response for the user's chat message
      */
