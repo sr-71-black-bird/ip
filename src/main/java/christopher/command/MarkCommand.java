@@ -1,6 +1,7 @@
 package christopher.command;
 
 import christopher.task.TaskList;
+import christopher.task.WrongInstructionException;
 
 /**
  * Handles procedures when the user inserted mark command
@@ -10,7 +11,7 @@ public class MarkCommand extends Command {
     private int index;
 
     public MarkCommand(int index, TaskList taskList) {
-        this.index = index; //bug found by AI
+        this.index = index; //bug found by AI (line missing)
         this.taskList = taskList;
     }
 
