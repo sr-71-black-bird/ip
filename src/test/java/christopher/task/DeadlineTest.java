@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 /**
  * This is a class containing tests for the Deadline class
  */
-public class DeadlineTask {
+public class DeadlineTest {
     private Deadline t1;
     private LocalDateTime deadline;
 
