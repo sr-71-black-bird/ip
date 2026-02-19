@@ -5,7 +5,11 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
 import java.util.ArrayList;
+import java.util.Locale;
 
 import christopher.task.Deadline;
 import christopher.task.Event;
@@ -65,12 +69,12 @@ public class Storage {
             break;
         case "D":
             String deadline = parts[2];
-            task = new Deadline(taskName, deadline);
+            task = new Deadline(taskName, parseDateTime(deadline));
             break;
         case "E":
             String start = parts[2];
             String end = parts[3];
-            task = new Event(taskName, start, end);
+            task = new Event(taskName, parseDateTime(start), parseDateTime(end));
             break;
         default:
             throw new WrongInstructionException("Unrecognizable format in save file tasks.txt, please review");
@@ -79,6 +83,21 @@ public class Storage {
             task.complete();
         }
         return task;
+    }
+
+    /**
+     * Returns LocalDateTime represented by input after parsing it
+     *
+     * @param input a string which represent date and time
+     * @return LocalDateTime variable which contains the date and time represented by input
+     */
+    public LocalDateTime parseDateTime(String input) {
+        DateTimeFormatter formatter =
+                new DateTimeFormatterBuilder()
+                        .parseCaseInsensitive()
+                        .appendPattern("MMM d yyyy, h:mm a")
+                        .toFormatter(Locale.ENGLISH);
+        return LocalDateTime.parse(input, formatter);
     }
 
     /**

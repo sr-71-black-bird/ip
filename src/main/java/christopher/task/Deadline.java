@@ -27,6 +27,17 @@ public class Deadline extends Task {
     }
 
     /**
+     * Creates deadline object with given name and the given deadline
+     *
+     * @param name string showing what the task is
+     * @param deadline LocalDateTime where the task must be completed by
+     */
+    public Deadline(String name, LocalDateTime deadline) throws WrongInstructionException {
+        super(name);
+        this.deadline = deadline;
+    }
+
+    /**
      * Returns the deadline date as an optional
      *
      * @return as above

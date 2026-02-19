@@ -40,6 +40,19 @@ public class Event extends Task {
         }
     }
 
+    /**
+     * Cretes an event object with given task name, start and end times
+     *
+     * @param name String showing what the task is
+     * @param start when event begins in LocalDateTime
+     * @param end when event ends in LocalDateTime
+     */
+    public Event(String name, LocalDateTime start, LocalDateTime end) throws WrongInstructionException {
+        super(name);
+        this.start = start;
+        this.end = end;
+    }
+
     public LocalDateTime getStart() {
         return this.start;
     }
@@ -60,7 +73,7 @@ public class Event extends Task {
     @Override
     public String toString() {
         DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("MMM dd yyyy, h:mm a");
-        return String.format("E | %s | %s | %s)",
+        return String.format("E | %s | %s | %s",
                 super.toString(),
                 this.start.format(outputFormatter),
                 this.end.format(outputFormatter));
