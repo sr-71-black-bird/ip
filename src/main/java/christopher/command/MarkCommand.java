@@ -10,6 +10,7 @@ public class MarkCommand extends Command {
     private int index;
 
     public MarkCommand(int index, TaskList taskList) {
+        this.index = index; //bug found by AI
         this.taskList = taskList;
     }
 
