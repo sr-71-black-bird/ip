@@ -23,6 +23,9 @@ import christopher.task.TaskList;
 import christopher.task.ToDo;
 import christopher.task.WrongInstructionException;
 
+/**
+ * Tests the features of storage class, tests are suggested by AI (Claude Sonnet 3.7)
+ */
 public class StorageTest {
     private Storage storage;
     private final Path testPath = Paths.get("./data/test_tasks.txt");
