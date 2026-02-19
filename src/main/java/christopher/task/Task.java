@@ -20,7 +20,7 @@ public class Task {
      */
     public Task(String name) throws WrongInstructionException {
         if (name.equals("")) {
-            throw new WrongInstructionException("Task name invalid");
+            throw new WrongInstructionException("You entered an empty task!");
         }
         this.name = name;
         this.isDone = false;

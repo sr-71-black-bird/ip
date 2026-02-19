@@ -68,6 +68,9 @@ public class Parser {
      */
     public DeadlineCommand parseDeadline(String input) throws ArrayIndexOutOfBoundsException, WrongInstructionException {
         String[] deadlineInput = input.split(" /by ");
+        if (deadlineInput.length > 2) {
+            throw new WrongInstructionException("You can only have one deadline, please try again");
+        }
         String deadlineName = deadlineInput[0].substring(deadlineInput[0].indexOf(" ") + 1).trim();
         return new DeadlineCommand(new Deadline(deadlineName, deadlineInput[1]), this.taskList);
     }
@@ -82,6 +85,9 @@ public class Parser {
      */
     public EventCommand parseEvent(String input) throws ArrayIndexOutOfBoundsException, WrongInstructionException {
         String[] eventInput = input.split("/event | /from | /to ");
+        if (eventInput.length > 3) {
+            throw new WrongInstructionException("You can only have one start and one end, please try again");
+        }
         String eventName = eventInput[0].substring(eventInput[0].indexOf(" ") + 1).trim();
         return new EventCommand(new Event(eventName, eventInput[1], eventInput[2]), this.taskList);
     }
@@ -92,8 +98,14 @@ public class Parser {
      * @param input user's input
      * @return MarkCommand object
      */
-    public MarkCommand parseMark(String input) {
+    public MarkCommand parseMark(String input) throws WrongInstructionException {
         int index = Integer.parseInt(input.split(" ")[1]) - 1;
+        if (index < 0) {
+            throw new WrongInstructionException("You can't mark a task that doesn't exist, index starts from 1");
+        }
+        if (index >= this.taskList.getTotalTask()) {
+            throw new WrongInstructionException("Your index is more than there exists tasks");
+        }
         return new MarkCommand(index, this.taskList);
     }
 
@@ -103,8 +115,15 @@ public class Parser {
      * @param input user's input
      * @return UnmarkCommand object
      */
-    public UnmarkCommand parseUnmark(String input) {
+    public UnmarkCommand parseUnmark(String input) throws WrongInstructionException {
         int unmarkIndex = Integer.parseInt(input.split(" ")[1]) - 1;
+        // Error handling recommended by AI
+        if (unmarkIndex < 0) {
+            throw new WrongInstructionException("You can't mark a task that doesn't exist, index starts from 1");
+        }
+        if (unmarkIndex >= this.taskList.getTotalTask()) {
+            throw new WrongInstructionException("Your index is more than there exists tasks");
+        }
         return new UnmarkCommand(unmarkIndex, this.taskList);
     }
 
@@ -145,8 +164,14 @@ public class Parser {
      * @param input user's delete command in string form
      * @return DeleteCommand(position of task to be deleted, christopher's tasklist, the task to be deleted)
      */
-    public DeleteCommand parseDelete(String input) {
+    public DeleteCommand parseDelete(String input) throws WrongInstructionException {
         int deleteIndex = Integer.parseInt(input.split(" ")[1]) - 1;
+        if (deleteIndex < 0) {
+            throw new WrongInstructionException("You can't mark a task that doesn't exist, index starts from 1");
+        }
+        if (deleteIndex >= this.taskList.getTotalTask()) {
+            throw new WrongInstructionException("Your index is more than there exists tasks");
+        }
         Task deleteTask = taskList.getTask(deleteIndex);
         return new DeleteCommand(deleteIndex, this.taskList, deleteTask);
     }

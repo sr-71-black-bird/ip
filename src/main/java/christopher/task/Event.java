@@ -35,6 +35,9 @@ public class Event extends Task {
         }
         this.start = LocalDateTime.parse(start, inputFormatter);
         this.end = LocalDateTime.parse(end, inputFormatter);
+        if (this.start.isAfter(this.end)) {
+            throw new WrongInstructionException("Your start date is after your end date");
+        }
     }
 
     public LocalDateTime getStart() {
