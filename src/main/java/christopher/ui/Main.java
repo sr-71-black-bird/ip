@@ -30,7 +30,7 @@ public class Main extends Application {
             Scene scene = new Scene(ap);
             stage.setTitle("Christopher");
             stage.setScene(scene);
-            fxmlLoader.<MainWindow>getController().setChristopher(christopher);  // inject the Christopher instance
+            fxmlLoader.<MainWindow>getController().setChristopher(christopher); // inject the Christopher instance
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();

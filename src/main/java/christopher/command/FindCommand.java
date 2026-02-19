@@ -1,9 +1,9 @@
 package christopher.command;
 
+import java.util.ArrayList;
+
 import christopher.task.TaskList;
 import christopher.task.WrongInstructionException;
-
-import java.util.ArrayList;
 
 /**
  * Executes the find command when the user is confirmed to be choosing such command.
@@ -13,6 +13,13 @@ public class FindCommand extends Command {
     private TaskList result;
     private ArrayList<String> keywords = new ArrayList<>();
 
+    /**
+     * Returns a FindCommand object.
+     *
+     * @param keywords a list of words to use to find the tasks.
+     * @param taskList the task list from which to search.
+     * @throws WrongInstructionException throws when there is no tasks.
+     */
     public FindCommand(String[] keywords, TaskList taskList) throws WrongInstructionException {
         this.taskList = taskList;
         for (int i = 1; i < keywords.length; i++) {

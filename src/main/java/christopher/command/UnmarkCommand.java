@@ -9,6 +9,12 @@ public class UnmarkCommand extends Command {
     private int index;
     private TaskList taskList;
 
+    /**
+     * Returns an UnmarkCommand object.
+     *
+     * @param index the position of the task to be unmarked.
+     * @param taskList the list from which we will unmark our task.
+     */
     public UnmarkCommand(int index, TaskList taskList) {
         this.index = index;
         this.taskList = taskList;

@@ -9,6 +9,12 @@ public class MarkCommand extends Command {
     private TaskList taskList;
     private int index;
 
+    /**
+     * Returns a MarkCommand object.
+     *
+     * @param index the position of the task to be marked.
+     * @param taskList task list from which we want to mark our task.
+     */
     public MarkCommand(int index, TaskList taskList) {
         this.index = index; //bug found by AI (line missing)
         this.taskList = taskList;

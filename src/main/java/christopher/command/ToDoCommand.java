@@ -11,6 +11,12 @@ public class ToDoCommand extends Command {
     private Task task;
     private TaskList taskList;
 
+    /**
+     * Returns a ToDoCommand object.
+     *
+     * @param task the new ToDoTask to be added.
+     * @param taskList the list to which this new task is added.
+     */
     public ToDoCommand(Task task, TaskList taskList) {
         this.task = task;
         this.taskList = taskList;

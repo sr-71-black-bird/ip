@@ -1,7 +1,7 @@
 package christopher.parser;
 
-import christopher.command.Command;
 import christopher.command.ByeCommand;
+import christopher.command.Command;
 import christopher.command.DeadlineCommand;
 import christopher.command.DeleteCommand;
 import christopher.command.EventCommand;
@@ -28,11 +28,24 @@ public class Parser {
     private TaskList taskList;
     private Storage storage;
 
+    /**
+     * Returns a parser object.
+     *
+     * @param taskList the chatbot's task list.
+     * @param storage the storage that is facilitating the bot.
+     */
     public Parser(TaskList taskList, Storage storage) {
         this.taskList = taskList;
         this.storage = storage;
     }
 
+    /**
+     * Returns a command after parsing user's input.
+     *
+     * @param userInput the string command by the user.
+     * @return Command one of the appropriate subclasses of Command.
+     * @throws WrongInstructionException when the user inputs unsupported commands.
+     */
     public Command parse(String userInput) throws WrongInstructionException {
         Instruction instruction = Instruction.from(userInput);
         switch (instruction) {
@@ -82,7 +95,8 @@ public class Parser {
      * @throws ArrayIndexOutOfBoundsException throws when the user did not specify a date and parse is not successful.
      * @throws WrongInstructionException      because super is called in Deadline and Task throws this.
      */
-    public DeadlineCommand parseDeadline(String input) throws ArrayIndexOutOfBoundsException, WrongInstructionException {
+    public DeadlineCommand parseDeadline(String input) throws ArrayIndexOutOfBoundsException,
+            WrongInstructionException {
         String[] deadlineInput = input.split(" /by ");
         if (deadlineInput.length > 2) {
             throw new WrongInstructionException("You can only have one deadline, please try again");
@@ -204,5 +218,3 @@ public class Parser {
         return new SortCommand(this.taskList);
     }
 }
-
-

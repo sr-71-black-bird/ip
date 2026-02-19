@@ -18,13 +18,19 @@ public class Christopher {
     private final Storage storage;
     private final Parser parser;
 
+    /**
+     * Returns a Christopher object.
+     *
+     * @throws IOException when storage fails.
+     * @throws WrongInstructionException to accomodate new task creation during loading from memory.
+     */
     public Christopher() throws IOException, WrongInstructionException {
         this.storage = new Storage("./data/tasks.txt");
         this.taskList = new TaskList(this.storage.load());
         this.parser = new Parser(this.taskList, this.storage);
     }
 
-    public static void main(String[] args) throws IOException, WrongInstructionException {
+    public static void main(String[] args) {
         System.out.println("Hello");
     }
 

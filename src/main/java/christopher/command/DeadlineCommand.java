@@ -11,6 +11,12 @@ public class DeadlineCommand extends Command {
     private Task task;
     private TaskList taskList;
 
+    /**
+     * Returns a deadlineCommand object.
+     *
+     * @param task the task to be added.
+     * @param taskList the task list where the new deadline task is added.
+     */
     public DeadlineCommand(Task task, TaskList taskList) {
         this.task = task;
         this.taskList = taskList;

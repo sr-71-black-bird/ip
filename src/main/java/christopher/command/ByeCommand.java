@@ -1,9 +1,9 @@
 package christopher.command;
 
+import java.io.IOException;
+
 import christopher.storage.Storage;
 import christopher.task.TaskList;
-
-import java.io.IOException;
 
 /**
  * Handles the procedures when user's input has been confirmed to be a bye instruction.
@@ -12,6 +12,12 @@ public class ByeCommand extends Command {
     private Storage storage;
     private TaskList taskList;
 
+    /**
+     * Returns a ByeCommand object.
+     *
+     * @param taskList the tasklist to be passed by christopher.
+     * @param storage the same storage that would be passed by christopher.
+     */
     public ByeCommand(TaskList taskList, Storage storage) {
         this.taskList = taskList;
         this.storage = storage;
