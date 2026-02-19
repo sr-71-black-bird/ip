@@ -1,5 +1,7 @@
 # Christopher User Guide
 
+![Christopher](Ui.png)
+
 Hey guys, this is Christopher! He is named after Alan Turing's supposed childhood love in the movie "The Imitation Game."
 
 # Supported Features
