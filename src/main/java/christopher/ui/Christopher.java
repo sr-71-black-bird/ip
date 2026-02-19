@@ -23,7 +23,7 @@ public class Christopher {
     private final Parser parser;
 
     public Christopher() throws IOException, WrongInstructionException {
-        this.storage = new Storage();
+        this.storage = new Storage("./data/tasks.txt");
         this.taskList = new TaskList(this.storage.load());
         this.parser = new Parser(this.taskList, this.storage);
     }

@@ -50,7 +50,7 @@ public class MainWindow extends AnchorPane {
         try {
             christopher.getStorage().save(christopher.getTaskList());
         } catch (IOException e) {
-            response = "The storage failed to save";
+            response = "The storage failed to save, try to fix it before using the bot again.";
         }
         dialogContainer.getChildren().addAll(
                 DialogBox.getUserDialog(input, userImage),

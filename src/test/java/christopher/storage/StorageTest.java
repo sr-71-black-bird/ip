@@ -33,7 +33,7 @@ public class StorageTest {
 
     @BeforeEach
     public void setUp() {
-        storage = new Storage();
+        storage = new Storage("./data/tasks.txt");
         taskList = new TaskList(new ArrayList<>());
     }
 

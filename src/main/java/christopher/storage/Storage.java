@@ -23,7 +23,11 @@ import christopher.task.WrongInstructionException;
  * It is also responsible for storing whatever tasks remaining into the same file
  */
 public class Storage {
-    private final Path path = Paths.get("./data/tasks.txt");
+    private final Path filePath;
+
+    public Storage(String relativePath) {
+        this.filePath = Paths.get(relativePath);
+    }
 
     /**
      * This saves the tasks in the tasklist into ./data/tasks.txt
@@ -31,8 +35,8 @@ public class Storage {
      * @throws IOException thrown when the target file has various issues
      */
     public void save(TaskList taskList) throws IOException {
-        Files.createDirectories(path.getParent());
-        try (BufferedWriter writer = Files.newBufferedWriter(path)) {
+        Files.createDirectories(filePath.getParent());
+        try (BufferedWriter writer = Files.newBufferedWriter(filePath)) {
             writer.write(taskList.toString());
         } catch (IOException e) {
             System.out.println(e.getMessage());
@@ -108,10 +112,10 @@ public class Storage {
      */
     public ArrayList<Task> load() throws IOException, WrongInstructionException {
         ArrayList<Task> tasks = new ArrayList<>();
-        if (!Files.exists(path)) { //this is when there the file doesn't exits
+        if (!Files.exists(filePath)) { //this is when there the file doesn't exits
             return tasks;
         }
-        for (String line: Files.readAllLines(path)) {
+        for (String line: Files.readAllLines(filePath)) {
             tasks.add(parseTask(line));
         }
         return tasks;
