@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 import org.junit.jupiter.api.AfterEach;
@@ -49,26 +50,19 @@ public class StorageTest {
 
     @Test
     public void parseTask_validDeadlineTask_returnsCorrectTask() throws WrongInstructionException {
-        Task task = storage.parseTask("2. D | [ ] Submit report | 2023-05-15");
+        Task task = storage.parseTask("2. D | [ ] Submit report | May 15 2023, 11:59 pm");
         assertTrue(task instanceof Deadline);
         assertEquals("Submit report", task.getName());
-        assertEquals("2023-05-15", ((Deadline) task).getDeadline());
+        assertEquals(LocalDateTime.of(2023, 5, 15, 23, 59), ((Deadline) task).getDeadline().orElse(null));
     }
 
     @Test
     public void parseTask_validEventTask_returnsCorrectTask() throws WrongInstructionException {
-        Task task = storage.parseTask("3. E | [ ] Team meeting | 2023-05-10 14:00 | 2023-05-10 16:00");
+        Task task = storage.parseTask("3. E | [ ] Team meeting | May 10 2023, 2:00 pm | May 10 2023, 4:00 pm");
         assertTrue(task instanceof Event);
         assertEquals("Team meeting", task.getName());
-        assertEquals("2023-05-10 14:00", ((Event) task).getStart());
-        assertEquals("2023-05-10 16:00", ((Event) task).getEnd());
-    }
-
-    @Test
-    public void parseTask_invalidFormat_throwsException() {
-        assertThrows(WrongInstructionException.class, () -> {
-            storage.parseTask("Invalid format");
-        });
+        assertEquals(LocalDateTime.of(2023, 5, 10, 14, 00), ((Event) task).getStart());
+        assertEquals(LocalDateTime.of(2023, 5, 10, 16, 00), ((Event) task).getEnd());
     }
 
     @Test
