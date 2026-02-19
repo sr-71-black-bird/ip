@@ -1,6 +1,9 @@
 package christopher.command;
 
 import christopher.task.TaskList;
+import christopher.task.WrongInstructionException;
+
+import java.util.ArrayList;
 
 /**
  * Executes the find command when the user is confirmed to be choosing such command
@@ -8,10 +11,16 @@ import christopher.task.TaskList;
 public class FindCommand extends Command {
     private TaskList taskList;
     private TaskList result;
-    private String[] keywords;
+    private ArrayList<String> keywords = new ArrayList<>();
 
-    public FindCommand(String[] keywords, TaskList taskList) {
+    public FindCommand(String[] keywords, TaskList taskList) throws WrongInstructionException {
         this.taskList = taskList;
+        for (int i = 1; i < keywords.length; i++) {
+            this.keywords.add(keywords[i]);
+        }
+        if (this.keywords.size() <= 0) {
+            throw new WrongInstructionException("You actually need some keywords to find your tasks");
+        }
     }
 
     /**
@@ -19,8 +28,8 @@ public class FindCommand extends Command {
      */
     @Override
     public void execute() {
-        assert (keywords.length > 0) : "Assumed there's actually some keywords";
-        this.result = this.taskList.find(keywords);
+        assert (keywords.size() > 0) : "Assumed there's actually some keywords";
+        this.result = this.taskList.find(keywords.toArray(new String[0]));
     }
 
     /**
@@ -30,6 +39,6 @@ public class FindCommand extends Command {
      */
     @Override
     public String getResponse() {
-        return String.format("Here are matching tasks in your list:\n$s", this.result);
+        return String.format("Here are matching tasks in your list:\n%s", this.result);
     }
 }

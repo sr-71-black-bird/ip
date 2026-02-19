@@ -34,7 +34,7 @@ public class SortCommand extends Command {
      */
     @Override
     public String getResponse() {
-        return String.format("Alright, here are tasks sorted by Deadline\n%s", this.taskList);
+        return String.format("Alright, here are tasks sorted by deadline\n%s", this.taskList);
     }
 
 }

@@ -153,8 +153,10 @@ public class Parser {
      * @param input the user's find command
      * @return a FindCommand(keywords to be searched, the taskList from christopher)
      */
-    public FindCommand parseFind(String input) {
-        System.out.println("Here are the matching tasks in your list");
+    public FindCommand parseFind(String input) throws WrongInstructionException {
+        if (input.equals("find")) {
+            throw new WrongInstructionException("You need to specify what you want to find");
+        }
         return new FindCommand(input.split(" "), this.taskList);
     }
 
