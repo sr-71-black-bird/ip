@@ -1,7 +1,5 @@
 package christopher.command;
 
-import christopher.task.TaskList;
-
 /**
  * Handles commands after interpreting user inputs
  */

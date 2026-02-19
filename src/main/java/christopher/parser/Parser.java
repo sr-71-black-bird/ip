@@ -1,8 +1,23 @@
 package christopher.parser;
 
-import christopher.command.*;
+import christopher.command.Command;
+import christopher.command.ByeCommand;
+import christopher.command.DeadlineCommand;
+import christopher.command.DeleteCommand;
+import christopher.command.EventCommand;
+import christopher.command.FindCommand;
+import christopher.command.ListCommand;
+import christopher.command.MarkCommand;
+import christopher.command.SortCommand;
+import christopher.command.ToDoCommand;
+import christopher.command.UnmarkCommand;
 import christopher.storage.Storage;
-import christopher.task.*;
+import christopher.task.Deadline;
+import christopher.task.Event;
+import christopher.task.Task;
+import christopher.task.TaskList;
+import christopher.task.ToDo;
+import christopher.task.WrongInstructionException;
 import christopher.ui.Instruction;
 
 /**

@@ -1,7 +1,6 @@
 package christopher.command;
 
 import christopher.task.TaskList;
-import christopher.task.WrongInstructionException;
 
 /**
  * Handles procedures when the user inserted mark command

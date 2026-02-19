@@ -6,11 +6,7 @@ import java.time.format.DateTimeParseException;
 import christopher.command.Command;
 import christopher.parser.Parser;
 import christopher.storage.Storage;
-import christopher.task.Deadline;
-import christopher.task.Event;
-import christopher.task.Task;
 import christopher.task.TaskList;
-import christopher.task.ToDo;
 import christopher.task.WrongInstructionException;
 
 
