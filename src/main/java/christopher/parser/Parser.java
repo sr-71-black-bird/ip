@@ -129,7 +129,12 @@ public class Parser {
      * @return MarkCommand object.
      */
     public MarkCommand parseMark(String input) throws WrongInstructionException {
-        int index = Integer.parseInt(input.split(" ")[1]) - 1;
+        int index;
+        try {
+            index = Integer.parseInt(input.split(" ")[1]) - 1;
+        } catch (NumberFormatException e) {
+            throw new WrongInstructionException("It has to be an integer");
+        }
         if (index < 0) {
             throw new WrongInstructionException("You can't mark a task that doesn't exist, index starts from 1");
         }
@@ -146,7 +151,12 @@ public class Parser {
      * @return UnmarkCommand object.
      */
     public UnmarkCommand parseUnmark(String input) throws WrongInstructionException {
-        int unmarkIndex = Integer.parseInt(input.split(" ")[1]) - 1;
+        int unmarkIndex;
+        try {
+            unmarkIndex = Integer.parseInt(input.split(" ")[1]) - 1;
+        } catch (NumberFormatException e) {
+            throw new WrongInstructionException("It has to be an integer");
+        }
         // Error handling recommended by AI
         if (unmarkIndex < 0) {
             throw new WrongInstructionException("You can't mark a task that doesn't exist, index starts from 1");
@@ -197,7 +207,12 @@ public class Parser {
      * @return DeleteCommand(position of task to be deleted, christopher's tasklist, the task to be deleted).
      */
     public DeleteCommand parseDelete(String input) throws WrongInstructionException {
-        int deleteIndex = Integer.parseInt(input.split(" ")[1]) - 1;
+        int deleteIndex;
+        try {
+            deleteIndex = Integer.parseInt(input.split(" ")[1]) - 1;
+        } catch (NumberFormatException e) {
+            throw new WrongInstructionException("It has to be an integer");
+        }
         if (deleteIndex < 0) {
             throw new WrongInstructionException("You can't mark a task that doesn't exist, index starts from 1");
         }
