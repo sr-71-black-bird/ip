@@ -114,11 +114,15 @@ public class Storage {
      */
     public ArrayList<Task> load() throws IOException, WrongInstructionException {
         ArrayList<Task> tasks = new ArrayList<>();
-        if (!Files.exists(filePath)) { //this is when there the file doesn't exits
-            return tasks;
-        }
-        for (String line: Files.readAllLines(filePath)) {
-            tasks.add(parseTask(line));
+        try {
+            if (!Files.exists(filePath)) { //this is when there the file doesn't exits
+                return tasks;
+            }
+            for (String line : Files.readAllLines(filePath)) {
+                tasks.add(parseTask(line));
+            }
+        } catch (IOException e) {
+            return new ArrayList<>();
         }
         return tasks;
     }
